@@ -38,12 +38,4 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:name, :description)
   end
 
-  def reviews_for_restaurant(id)
-    @reviews = Review.where(:restaurant_id=>id)
-  end
-
-  def temp
-
-  end
-  
 end

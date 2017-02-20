@@ -6,7 +6,7 @@
     <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %><br>
     <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %><br>
 
-    <% @reviews = Review.where(:restaurant_id=>restaurant.id) %>
+    <% @reviews = reviews_for_restaurant(restaurant.id) %>
     <% if @reviews.any? %>
       <br>Reviews<br>
       <% @reviews.each do |review| %>
