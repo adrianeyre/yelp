@@ -5,7 +5,6 @@
 ## Index
 * [Gems Used] (#GEMS)
 * [Installtion] (#Install)
-* [User Stories] (#US)
 * [Usage] (#Usage)
 * [Database Schema] (#Database)
 * [Screen Shots] (#Shots)
@@ -42,3 +41,29 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ```
+
+## <a name="Install">Installation</a>
+Yelp is ran on Ruby version : 2.3.3
+
+* To clone and change Ruby versions
+```shell
+$ git clone https://github.com/adrianeyre/yelp
+$ cd yelp
+$ rvm 2.3.3
+```
+* To install Ruby 2.3.3
+```shell
+$ rvm install ruby-2.3.3
+```
+* To install Gems
+```shell
+$ gem install bundle
+$ bundle
+```
+
+## <a name="Usage">Usage</a>
+To load Rails web server
+```shell
+$ bin/rails server
+```
+type `http://localhost:3000` into your web browser
