@@ -67,3 +67,7 @@ To load Rails web server
 $ bin/rails server
 ```
 type `http://localhost:3000` into your web browser
+
+## <a name="Database">Database Schema</a>
+
+## <a name="Shots">Screen Shots</a>
