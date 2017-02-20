@@ -1,5 +1,5 @@
 # Yelp
-#### Technologies: Ruby, Rspec, Rails
+#### Technologies: Ruby, Rspec, Rails, Heroku, HTML, CSS, Postgres, SQL
 ### [Makers Academy] (http://www.makersacademy.com) - Week 8 Pair Programming Project
 
 ## Index
