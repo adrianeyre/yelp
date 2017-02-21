@@ -6,6 +6,7 @@
 * [Gems Used] (#GEMS)
 * [Installtion] (#Install)
 * [Usage] (#Usage)
+* [Rails File Structure] (#Rails)
 * [Database Schema] (#Database)
 * [Screen Shots] (#Shots)
 * [Use live on Heroku] (#Heroku)
@@ -67,6 +68,9 @@ To load Rails web server
 $ bin/rails server
 ```
 type `http://localhost:3000` into your web browser
+
+## <a name="Rails">Rails File Structure</a>
+[![RubyRails](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png "Screen Shot 1")
 
 ## <a name="Database">Database Schema</a>
 
