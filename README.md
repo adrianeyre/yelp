@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'shoulda'
 
 group :test do
   gem 'rspec-rails'
