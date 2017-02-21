@@ -70,7 +70,6 @@ feature 'restaurants' do
       Restaurant.create name: 'KFC', description: 'Deep fried goodness', id: 1
       sign_in
     end
-    # before { Restaurant.create name: 'KFC', description: 'Deep fried goodness', id: 1 }
     scenario 'let a user edit a restaurant' do
       visit '/restaurants'
       click_link 'Edit KFC'
@@ -89,7 +88,6 @@ feature 'restaurants' do
       Restaurant.create name: 'KFC', description: 'Deep fried goodness'
       sign_in
     end
-    # before { Restaurant.create name: 'KFC', description: 'Deep fried goodness' }
     scenario 'removes a restaurant when a user clicks a delete link' do
       visit '/restaurants'
       click_link 'Delete KFC'
