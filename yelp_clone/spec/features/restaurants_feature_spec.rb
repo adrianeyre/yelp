@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 feature 'restaurants' do
+  context 'create restaurant while not logged in' do
+    scenario 'redirects to sign_up if not logged in' do
+      visit '/restaurants/new'
+      expect(current_path).to eq "/users/sign_in"
+    end
+  end
+
   context 'sign up' do
     before do
       sign_up
@@ -81,4 +88,5 @@ feature 'restaurants' do
       expect(page).to have_content 'Deep fried goodness'
     end
   end
+
 end

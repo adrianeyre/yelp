@@ -66,10 +66,6 @@ def sign_up
   click_button('Sign up')
 end
 
-def sign_in
-
-end
-
 def create_restaurant
   visit '/restaurants'
   click_link 'Add a restaurant'
