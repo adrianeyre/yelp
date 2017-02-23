@@ -23,6 +23,6 @@ feature 'reviewing' do
     sign_out
     sign_up("new@test.com")
     leave_review('Great', '5')
-    expect(page).to have_content('Average rating: 4')
+    expect(page).to have_content('Average rating: ★★★★☆')
   end
 end
