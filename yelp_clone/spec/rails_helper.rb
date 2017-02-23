@@ -71,14 +71,14 @@ def sign_out
   click_link('Sign out')
 end
 
-def create_restaurant
+def create_restaurant(name="KFC")
   visit '/restaurants'
   click_link 'Add a restaurant'
-  fill_in 'Name', with: 'KFC'
+  fill_in 'Name', with: name
   click_button 'Create Restaurant'
 end
 
-def leave_review(thoughts, rating)
+def leave_review(thoughts="My toughts", rating=1)
   visit '/restaurants'
   click_link 'Review KFC'
   fill_in 'Thoughts', with: thoughts
