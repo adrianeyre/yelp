@@ -1,8 +1,9 @@
 <% if @restaurants.any? %>
   <% @restaurants.each do |restaurant| %>
     <h2> <%= restaurant.name %> </h2>
+    <h3>Average rating: <%= restaurant.average_rating.to_i %></h3>
     <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
-    
+
     <% if user_signed_in? %>
       <% if current_user.id == restaurant.user_id %>
         <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %><br>

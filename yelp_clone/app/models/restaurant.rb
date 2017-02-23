@@ -21,5 +21,10 @@ class Restaurant < ActiveRecord::Base
     attributes[:user] ||= user
     reviews.build(attributes)
   end
-  
+
+  def average_rating
+    return 'N/A' if reviews.none?
+    review = reviews.map {|review| review.rating}
+    reviews.inject(0) {|memo, review| memo + review.rating}/review.length
+  end
 end
