@@ -16,6 +16,7 @@
     <% if @reviews.any? %>
       <br>Reviews<br>
       <% @reviews.each do |review| %>
+        <p><%= pluralize review.endorsements.count, 'endorsement' %></p>
         Thoughts: <%= review.thoughts %><br>
         Rating: <%= review.rating %><br>
       <% end %>
