@@ -16428,3 +16428,293 @@ Processing by RestaurantsController#new as HTML
 Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:36:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Restaurant> at /Users/AdrianEyre/Projects/Makers Main-Course/Week 8/yelp/yelp_clone/app/models/restaurant.rb:5)
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (51.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  Rendered restaurants/index.html.erb within layouts/application (175.0ms)
+Completed 200 OK in 619ms (Views: 484.1ms | ActiveRecord: 68.8ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2017-02-24 15:36:48 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (128.2ms)
+  Rendered restaurants/new.html.erb within layouts/application (131.6ms)
+Completed 200 OK in 217ms (Views: 165.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/restaurants" for 127.0.0.1 at 2017-02-24 15:36:54 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R2UZVk07joOV1On51FOsNSVjCKwxYOiG9y/KaJc9FJXnIATCIRg9DK4MIEPk/ejRIhGNCe1uV4HRVl+5ck9AxA==", "restaurant"=>{"name"=>"sdsd", "description"=>"sdsd", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fcf8d607bd8 @tempfile=#<Tempfile:/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/RackMultipart20170224-14737-1i0bqnh.png>, @original_filename="KFC.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"restaurant[image]\"; filename=\"KFC.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Restaurant"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-6pdlu6.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-6pdlu6.png[0]'
+Command :: convert '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-6pdlu6.png[0]' -auto-orient -resize "300x300>" '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/337a5f938a9b36b2561011ba333e1a9c20170224-14737-fj44im'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-6pdlu6.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-6pdlu6.png[0]'
+Command :: convert '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-6pdlu6.png[0]' -auto-orient -resize "100x100>" '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/337a5f938a9b36b2561011ba333e1a9c20170224-14737-zf2g51'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14737-7nkenp.png'
+  [1m[36mRestaurant Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "sdsd"], ["LIMIT", 1]]
+  [1m[35mSQL (40.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "created_at", "updated_at", "description", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "sdsd"], ["created_at", 2017-02-24 15:36:55 UTC], ["updated_at", 2017-02-24 15:36:55 UTC], ["description", "sdsd"], ["user_id", 1], ["image_file_name", "KFC.png"], ["image_content_type", "image/png"], ["image_file_size", 141327], ["image_updated_at", 2017-02-24 15:36:54 UTC]]
+[paperclip] saving /restaurants/images/000/000/005/original/KFC.png
+[AWS S3 404 1.870248 0 retries] put_object(:acl=>:public_read,:bucket_name=>"adrian.eyre-yelp",:content_length=>141327,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: KFC.png,:key=>"restaurants/images/000/000/005/original/KFC.png") AWS::S3::Errors::NoSuchBucket The specified bucket does not exist
+
+[AWS S3 200 1.24148 0 retries] create_bucket(:bucket_name=>"adrian.eyre-yelp")  
+
+[paperclip] saving /restaurants/images/000/000/005/original/KFC.png
+[AWS S3 200 2.742992 0 retries] put_object(:acl=>:public_read,:bucket_name=>"adrian.eyre-yelp",:content_length=>141327,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: KFC.png,:key=>"restaurants/images/000/000/005/original/KFC.png")  
+
+[paperclip] saving /restaurants/images/000/000/005/medium/KFC.png
+[AWS S3 200 2.320171 0 retries] put_object(:acl=>:public_read,:bucket_name=>"adrian.eyre-yelp",:content_length=>50722,:content_type=>"image/png",:data=>Paperclip::FileAdapter: 337a5f938a9b36b2561011ba333e1a9c20170224-14737-fj44im,:key=>"restaurants/images/000/000/005/medium/KFC.png")  
+
+[paperclip] saving /restaurants/images/000/000/005/thumb/KFC.png
+[AWS S3 200 0.324983 0 retries] put_object(:acl=>:public_read,:bucket_name=>"adrian.eyre-yelp",:content_length=>13960,:content_type=>"image/png",:data=>Paperclip::FileAdapter: 337a5f938a9b36b2561011ba333e1a9c20170224-14737-zf2g51,:key=>"restaurants/images/000/000/005/thumb/KFC.png")  
+
+  [1m[35m (55.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 9835ms (ActiveRecord: 98.1ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2017-02-24 15:37:04 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (12.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (64.4ms)
+Completed 200 OK in 126ms (Views: 99.2ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:37:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Restaurant> at /Users/AdrianEyre/Projects/Makers Main-Course/Week 8/yelp/yelp_clone/app/models/restaurant.rb:5)
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (122.9ms)
+Completed 200 OK in 619ms (Views: 535.7ms | ActiveRecord: 33.6ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2017-02-24 15:37:19 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (36.4ms)
+  Rendered restaurants/new.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 142ms (Views: 121.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/restaurants" for 127.0.0.1 at 2017-02-24 15:37:25 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pTz7ZJVeyh2IcSub7L5oPyJd+j7Oo1OnakwoHl8zqnYFeebw+X15krOp4iHcECzbJS9/mxKt7KBMNb3PukH+Jw==", "restaurant"=>{"name"=>"sdsd", "description"=>"sdsds", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fd0fe6827d0 @tempfile=#<Tempfile:/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/RackMultipart20170224-14805-1dpvlkb.png>, @original_filename="KFC.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"restaurant[image]\"; filename=\"KFC.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Restaurant"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-vrhgbn.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-vrhgbn.png[0]'
+Command :: convert '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-vrhgbn.png[0]' -auto-orient -resize "300x300>" '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/ccd11682e6b688e2a4f97e0644487ad520170224-14805-17nr0f9'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-vrhgbn.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-vrhgbn.png[0]'
+Command :: convert '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-vrhgbn.png[0]' -auto-orient -resize "100x100>" '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/ccd11682e6b688e2a4f97e0644487ad520170224-14805-3x8juf'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-j8o892.png'
+  [1m[36mRestaurant Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "sdsd"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (2.6ms)
+  Rendered restaurants/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 671ms (Views: 56.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/restaurants" for 127.0.0.1 at 2017-02-24 15:37:33 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eHxV4QKl5N9DZE4LtDsd82YcE8u4huB2fGB0XVhC7BNRwDg70B+bJj1KnZ15tquSib5OFPPqw8o6u1Uz3mMXTw==", "restaurant"=>{"name"=>"sdsdss", "description"=>"sdsds", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fd10018ef60 @tempfile=#<Tempfile:/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/RackMultipart20170224-14805-1q2cz2a.png>, @original_filename="KFC.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"restaurant[image]\"; filename=\"KFC.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Restaurant"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-difmbq.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-difmbq.png[0]'
+Command :: convert '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-difmbq.png[0]' -auto-orient -resize "300x300>" '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/17a60ba7ea64898331410d348acb184f20170224-14805-1jkccvo'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-difmbq.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-difmbq.png[0]'
+Command :: convert '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-difmbq.png[0]' -auto-orient -resize "100x100>" '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/17a60ba7ea64898331410d348acb184f20170224-14805-1keijof'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/3x/y36jr47x1yn8mn2cnyqns49r0000gn/T/5346682d948cc3f683635b6918f9b3d020170224-14805-a29j63.png'
+  [1m[36mRestaurant Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "sdsdss"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "created_at", "updated_at", "description", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "sdsdss"], ["created_at", 2017-02-24 15:37:33 UTC], ["updated_at", 2017-02-24 15:37:33 UTC], ["description", "sdsds"], ["user_id", 1], ["image_file_name", "KFC.png"], ["image_content_type", "image/png"], ["image_file_size", 141327], ["image_updated_at", 2017-02-24 15:37:33 UTC]]
+[paperclip] saving /restaurants/images/000/000/006/original/KFC.png
+[AWS S3 400 0.70299 0 retries] put_object(:acl=>:public_read,:bucket_name=>"adrian.eyre-yelp",:content_length=>141327,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: KFC.png,:key=>"restaurants/images/000/000/006/original/KFC.png") AWS::S3::Errors::AuthorizationHeaderMalformed The authorization header is malformed; the region 'US' is wrong; expecting 'us-east-1'
+
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 1482ms (ActiveRecord: 5.7ms)
+
+
+  
+AWS::S3::Errors::AuthorizationHeaderMalformed (The authorization header is malformed; the region 'US' is wrong; expecting 'us-east-1'):
+  
+app/controllers/restaurants_controller.rb:17:in `create'
+  Rendering /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/AdrianEyre/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.9ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:38:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Restaurant> at /Users/AdrianEyre/Projects/Makers Main-Course/Week 8/yelp/yelp_clone/app/models/restaurant.rb:5)
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (109.0ms)
+Completed 200 OK in 496ms (Views: 424.6ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:38:23 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 127ms (Views: 116.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:38:30 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (1.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 75ms (Views: 65.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:38:32 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 2]]
+  [1m[36mReview Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "endorsements" WHERE "endorsements"."review_id" = $1[0m  [["review_id", 3]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 94ms (Views: 77.5ms | ActiveRecord: 10.8ms)
+
+
