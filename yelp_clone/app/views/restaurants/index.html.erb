@@ -1,33 +1,39 @@
 <% if @restaurants.any? %>
   <% @restaurants.each do |restaurant| %>
-    <h2> <%= restaurant.name %> </h2>
-    <h3>Average rating: <%= star_rating(restaurant.average_rating) %></h3>
-    <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
+    <div class="container page_box">
+      <div class="inner">
+        <h2> <%= restaurant.name %> </h2>
+        <h3>Average rating: <%= star_rating(restaurant.average_rating) %></h3>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
 
-    <% if user_signed_in? %>
-      <% if current_user.id == restaurant.user_id %>
-        <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %><br>
-        <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %><br>
-      <% end %>
-      <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %><br>
-    <% end %>
+        <% if user_signed_in? %>
+          <% if current_user.id == restaurant.user_id %>
+            <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %><br>
+            <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %><br>
+          <% end %>
+          <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %><br>
+        <% end %>
 
-    <% @reviews = reviews_for_restaurant(restaurant.id) %>
-    <% if @reviews.any? %>
-      <br>Reviews<br>
-      <% @reviews.each do |review| %>
-        <!-- <p><%= pluralize review.endorsements.count, 'endorsement' %></p> -->
-        <li>
-          Thoughts: <%= review.thoughts %> Rating: <%= review.rating %>
-          <%= link_to "Endorse", review_endorsements_path(review), class: 'endorsements-link' %>
-          <span class="endorsements_count"> <%= review.endorsements.count %> </span> <%= 'endorsement'.pluralize(review.endorsements.count) %>
-        </li>
-      <% end %>
-    <% end %>
-
+        <% @reviews = reviews_for_restaurant(restaurant.id) %>
+        <% if @reviews.any? %>
+          <br>Reviews<br>
+          <% @reviews.each do |review| %>
+            <!-- <p><%= pluralize review.endorsements.count, 'endorsement' %></p> -->
+            <li>
+              Thoughts: <%= review.thoughts %> Rating: <%= review.rating %>
+              <%= link_to "Endorse", review_endorsements_path(review), class: 'endorsements-link' %>
+              <span class="endorsements_count"> <%= review.endorsements.count %> </span> <%= 'endorsement'.pluralize(review.endorsements.count) %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-<% else %>
-  No restaurants yet
+  <% else %>
+    No restaurants yet
 <% end %>
-
-<br><br><a href='/restaurants/new'>Add a restaurant</a>
+<div class="container page_box">
+  <div class="inner option_div">
+    <center><a href='/restaurants/new'>Add a restaurant</a></center>
+  </div>
+</div>
