@@ -1,5 +1,6 @@
 /yelp_clone/.env
 /yelp/yelp_clone/.env
+/.env
 /.bundle
 /log/*
 /tmp/*
