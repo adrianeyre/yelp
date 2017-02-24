@@ -1,4 +1,9 @@
 <% if @restaurants.any? %>
+  <div class="container page_box">
+    <div class="inner option_div">
+      <center>Restaurants</center>
+    </div>
+  </div>
   <% @restaurants.each do |restaurant| %>
     <div class="container page_box">
       <div class="inner">
@@ -32,8 +37,4 @@
   <% else %>
     No restaurants yet
 <% end %>
-<div class="container page_box">
-  <div class="inner option_div">
-    <center><a href='/restaurants/new'>Add a restaurant</a></center>
-  </div>
-</div>
+<br>

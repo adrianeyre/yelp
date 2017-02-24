@@ -66,8 +66,7 @@ feature 'restaurants' do
 
   context 'creating restaurants without signing in' do
     scenario 'does not let you create a restaurant if you are not logged in' do
-      visit '/restaurants'
-      click_link 'Add a restaurant'
+      visit '/restaurants/new'
       expect(page).to have_content 'Log in'
     end
   end

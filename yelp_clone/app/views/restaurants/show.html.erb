@@ -1,8 +1,16 @@
-<p><%= @restaurant.name %></p>
-<p><%= @restaurant.description %></p>
-Reviews <br>
-<% @reviews.each do |review| %>
-  Thoughts: <%= review.thoughts %><br>
-  Rating: <%= review.rating %><br>
-<% end %>
-<br><br><a href='/restaurants'>Restaurant list</a>
+<div class="container page_box">
+  <h1><%= @restaurant.name %></h1>
+  <h3>Average rating: <%= star_rating(@restaurant.average_rating) %></h3>
+  <p><%= @restaurant.description %></p>
+  <h3>Reviews</h3>
+  <% @reviews.each do |review| %>
+    <b>Thoughts:</b> <%= review.thoughts %><br>
+    <b>Rating:</b> <%= star_rating(review.rating) %><br>
+  <% end %>
+  <br>
+</div>
+<div class="container page_box">
+  <div class="inner option_div">
+    <center><a href='/restaurants'>Restaurant list</a></center>
+  </div>
+</div>
