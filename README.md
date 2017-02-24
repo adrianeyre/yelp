@@ -78,7 +78,7 @@ Creata a file called `.env` in the root and fille in the below details
 FACEBOOK_APP_SECRET=
 S3_BUCKET_NAME=
 AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=t
+AWS_SECRET_ACCESS_KEY=
 AWS_REGION=
 ```
 
