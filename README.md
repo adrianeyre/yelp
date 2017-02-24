@@ -76,10 +76,21 @@ $ bin/rails server
 type `http://localhost:3000` into your web browser
 
 ## <a name="Rails">Rails File Structure</a>
-[![RubyRails](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png "Screen Shot 1")
+[![RubyRails](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png "Ruby on Rails File Structure")
 
 ## <a name="Database">Database Schema</a>
 
 ## <a name="Shots">Screen Shots</a>
+### Main Restaurant
+[![Screenshot](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot1.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot1.png "Screen Shot 1")
+
+### Restaurant Profile Page
+[![Screenshot](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot2.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot2.png "Screen Shot 2")
+
+### Create New Restaurant
+[![Screenshot](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot3.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot3.png "Screen Shot 3")
+
+### User Sign Up
+[![Screenshot](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot4.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot4.png "Screen Shot 4")
 
 ## <a name="Heroku">Use live on Heroku</a>
