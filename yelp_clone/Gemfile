@@ -5,8 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', require: 'dotenv/rails-now'
+# gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'aws-sdk', '< 2.0'
 gem 'rails', '~> 5.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -17,13 +19,12 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'aws-sdk', '< 2.0'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-digitalocean'
-gem 'paperclip'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 group :test do
   gem 'rspec-rails'
@@ -35,6 +36,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug', platform: :mri
 end
 
