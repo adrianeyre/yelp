@@ -12,6 +12,7 @@
 
 ## <a name="GEMS">Gems Used</a>
 ```ruby
+gem 'aws-sdk', '< 2.0'
 gem 'rails', '~> 5.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -21,9 +22,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
 gem 'devise'
-gem 'shoulda'
 gem 'omniauth-facebook'
+gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-digitalocean'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 group :test do
   gem 'rspec-rails'
@@ -35,6 +40,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug', platform: :mri
 end
 
