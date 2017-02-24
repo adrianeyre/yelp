@@ -7,7 +7,6 @@
 * [Installtion] (#Install)
 * [Usage] (#Usage)
 * [Rails File Structure] (#Rails)
-* [Database Schema] (#Database)
 * [Screen Shots] (#Shots)
 * [Use live on Heroku] (#Heroku)
 
@@ -91,8 +90,6 @@ type `http://localhost:3000` into your web browser
 
 ## <a name="Rails">Rails File Structure</a>
 [![RubyRails](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/RubyRails.png "Ruby on Rails File Structure")
-
-## <a name="Database">Database Schema</a>
 
 ## <a name="Shots">Screen Shots</a>
 ### Main Restaurant
