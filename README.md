@@ -58,6 +58,11 @@ $ git clone https://github.com/adrianeyre/yelp
 $ cd yelp
 $ rvm 2.3.3
 ```
+* Checkout branch
+```
+$ git checkout branch_name
+```
+where `branch_name` is `V1-day-one`, `V2-day-two`, `V2-day-three`, `V3-day-four` or `V3-day-five`
 * To install Ruby 2.3.3
 ```shell
 $ rvm install ruby-2.3.3
