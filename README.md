@@ -72,6 +72,15 @@ $ rvm install ruby-2.3.3
 $ gem install bundle
 $ bundle
 ```
+* Update your Facebook Security Key and AWS details
+Creata a file called `.env` in the root and fille in the below details
+```
+FACEBOOK_APP_SECRET=
+S3_BUCKET_NAME=
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=t
+AWS_REGION=
+```
 
 ## <a name="Usage">Usage</a>
 To load Rails web server
