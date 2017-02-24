@@ -1,7 +1,5 @@
 class RestaurantsController < ApplicationController
   def index
-    if user_signed_in?
-    end
     @restaurants = Restaurant.all
   end
 
