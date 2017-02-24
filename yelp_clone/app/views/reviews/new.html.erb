@@ -1,7 +1,14 @@
-<%= form_for [@restaurant, @review] do |f| %>
-  <%= f.label :thoughts %>
-  <%= f.text_area :thoughts %>
-  <%= f.label :rating %>
-  <%= f.select :rating, (1..5) %>
-  <%= f.submit 'Leave Review' %>
-<% end %>
+<div class="container page_box option_div">
+  <center>Leave a Review</center>
+</div>
+<div class="container page_box">
+  <%= form_for [@restaurant, @review] do |f| %>
+    <center>
+      <br><%= f.label :thoughts %><br>
+      <%= f.text_area :thoughts %><br>
+      <%= f.label :rating %><br>
+      <%= f.select :rating, (1..5) %><br><br>
+      <%= f.submit 'Leave Review' %><br><br>
+    </center>
+  <% end %>
+</div>

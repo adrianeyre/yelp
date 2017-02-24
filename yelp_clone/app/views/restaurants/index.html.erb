@@ -23,10 +23,9 @@
         <% if @reviews.any? %>
           <br>Reviews<br>
           <% @reviews.each do |review| %>
-            <!-- <p><%= pluralize review.endorsements.count, 'endorsement' %></p> -->
             <li>
-              Thoughts: <%= review.thoughts %> Rating: <%= review.rating %>
-              <%= link_to "Endorse", review_endorsements_path(review), class: 'endorsements-link' %>
+              Thoughts: <%= review.thoughts %> Rating: <%= star_rating(review.rating) %> -
+              <% if user_signed_in? %><%= link_to "Endorse", review_endorsements_path(review), class: 'endorsements-link' %> -<%end%>
               <span class="endorsements_count"> <%= review.endorsements.count %> </span> <%= 'endorsement'.pluralize(review.endorsements.count) %>
             </li>
           <% end %>
