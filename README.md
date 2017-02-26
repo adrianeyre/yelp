@@ -78,7 +78,7 @@ $ gem install bundle
 $ bundle
 ```
 * Update your Facebook Security Key and AWS details
-Creata a file called `.env` in the root and fille in the below details
+Create a file called `.env` in the root and fill in the below details
 ```
 FACEBOOK_APP_SECRET=
 S3_BUCKET_NAME=
