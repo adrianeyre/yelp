@@ -1,14 +1,14 @@
 # Yelp
 #### Technologies: Ruby, Rspec, Rails, Heroku, HTML, CSS, Postgres, SQL
-### [Makers Academy] (http://www.makersacademy.com) - Week 8 Pair Programming Project
+### [Makers Academy](http://www.makersacademy.com) - Week 8 Pair Programming Project
 
 ## Index
-* [Gems Used] (#GEMS)
-* [Installtion] (#Install)
-* [Usage] (#Usage)
-* [Rails File Structure] (#Rails)
-* [Screen Shots] (#Shots)
-* [Use live on Heroku] (#Heroku)
+* [Gems Used](#GEMS)
+* [Installtion](#Install)
+* [Usage](#Usage)
+* [Rails File Structure](#Rails)
+* [Screen Shots](#Shots)
+* [Use live on Heroku](#Heroku)
 
 ## <a name="GEMS">Gems Used</a>
 ```ruby
@@ -111,4 +111,5 @@ type `http://localhost:3000` into your web browser
 [![Screenshot](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot4.png)](https://raw.githubusercontent.com/adrianeyre/yelp/master/images/screenshot4.png "Screen Shot 4")
 
 ## <a name="Heroku">Use live on Heroku</a>
-[Live on Heroku] (https://adrianeyre-yelp.herokuapp.com/)
+
+[![heroku-48](https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/heroku.png)](https://adrianeyre-yelp.herokuapp.com/) [Use on Heroku](https://adrianeyre-yelp.herokuapp.com/)
